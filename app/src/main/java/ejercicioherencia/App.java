@@ -6,44 +6,39 @@ package ejercicioherencia;
 public class App {
 
     public static void main(String[] args) {
-        Employee emp = new Employee();
-        emp.setName("Ken Wood");
+       EarlyBindingSuper ebSuper = new EarlyBindingSuper();
+       EarlyBindingSub ebSub = new EarlyBindingSub();
 
-        Manager mgr = new Manager();
-        mgr.setName("Ken Furr");
+        System.out.println(ebSuper.str);
 
-        EmpUtil.printName(emp);
-        EmpUtil.printName(mgr);
+        System.out.println(ebSuper.count);
 
-        Employee emp2;
-        Manager mgr2 = new Manager();
-        emp2 = mgr2;
-        mgr2 = (Manager)emp2;
+        ebSuper.print();
 
-        /*Employee emp3;
-        Manager mgr3 = new Manager();
-        ParTimeManager ptm = new ParTimeManager();
-        emp3 = mgr3;
-        // ESTO PETA : ptm = (ParTimeManager)emp3;*/
+        System.out.println("------------------------------");
 
-        Manager mgr3 = new Manager();
-        Employee emp3 = mgr3;
-        if (emp3 instanceof Manager){
-            mgr3 = (Manager) emp3;
-        }
-        else{
-            System.out.println("Hola holita vecinito");
-        }
+        System.out.println(ebSub.str);
 
-        Employee employee = new Employee();
-        employee.setName("John Jacobs");
+        System.out.println(ebSub.count);
 
-        Manager manager = new Manager();
-        manager.setName("John Jacobs");
+        ebSub.print();
 
-        System.out.println(manager.equals(employee));
-        System.out.println(employee.equals(manager));
-        System.out.println(employee.equals("John Jacobs"));
+        System.out.println("------------------------------");
 
+        System.out.println(((EarlyBindingSuper)ebSub).str);
+        System.out.println(((EarlyBindingSuper)ebSub).count);
+
+        ((EarlyBindingSuper)ebSub).print();
+
+        System.out.println("------------------------------");
+
+        ebSuper = ebSub;
+
+        System.out.println(ebSuper.str);
+
+        System.out.println(ebSuper.count);
+
+        ebSuper.print();
+        System.out.println("------------------------------");
     }
 }
