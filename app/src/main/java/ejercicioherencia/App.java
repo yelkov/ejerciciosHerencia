@@ -4,11 +4,14 @@
 package ejercicioherencia;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Manager mgr = new Manager();
+
+        mgr.setName("Leslie Zanders");
+
+        String mgrName = mgr.getName();
+
+        System.out.println("Manager name: " + mgrName);
     }
 }
