@@ -35,5 +35,15 @@ public class App {
             System.out.println("Hola holita vecinito");
         }
 
+        Employee employee = new Employee();
+        employee.setName("John Jacobs");
+
+        Manager manager = new Manager();
+        manager.setName("John Jacobs");
+
+        System.out.println(manager.equals(employee));
+        System.out.println(employee.equals(manager));
+        System.out.println(employee.equals("John Jacobs"));
+
     }
 }
