@@ -6,39 +6,16 @@ package ejercicioherencia;
 public class App {
 
     public static void main(String[] args) {
-       EarlyBindingSuper ebSuper = new EarlyBindingSuper();
-       EarlyBindingSub ebSub = new EarlyBindingSub();
+       LateBindingSuper lbSuper = new LateBindingSuper();
+       LateBindingSub lbSub = new LateBindingSub();
 
-        System.out.println(ebSuper.str);
+       lbSuper.print();
 
-        System.out.println(ebSuper.count);
+       lbSub.print();
+     ((LateBindingSuper)lbSub).print();
 
-        ebSuper.print();
+     lbSuper = lbSub;
 
-        System.out.println("------------------------------");
-
-        System.out.println(ebSub.str);
-
-        System.out.println(ebSub.count);
-
-        ebSub.print();
-
-        System.out.println("------------------------------");
-
-        System.out.println(((EarlyBindingSuper)ebSub).str);
-        System.out.println(((EarlyBindingSuper)ebSub).count);
-
-        ((EarlyBindingSuper)ebSub).print();
-
-        System.out.println("------------------------------");
-
-        ebSuper = ebSub;
-
-        System.out.println(ebSuper.str);
-
-        System.out.println(ebSuper.count);
-
-        ebSuper.print();
-        System.out.println("------------------------------");
+     lbSuper.print();
     }
 }
