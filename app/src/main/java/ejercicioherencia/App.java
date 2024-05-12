@@ -20,10 +20,20 @@ public class App {
         emp2 = mgr2;
         mgr2 = (Manager)emp2;
 
-        Employee emp3;
+        /*Employee emp3;
         Manager mgr3 = new Manager();
         ParTimeManager ptm = new ParTimeManager();
         emp3 = mgr3;
-        ptm = (ParTimeManager)emp3;
+        // ESTO PETA : ptm = (ParTimeManager)emp3;*/
+
+        Manager mgr3 = new Manager();
+        Employee emp3 = mgr3;
+        if (emp3 instanceof Manager){
+            mgr3 = (Manager) emp3;
+        }
+        else{
+            System.out.println("Hola holita vecinito");
+        }
+
     }
 }
