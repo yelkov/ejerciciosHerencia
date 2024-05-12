@@ -14,5 +14,10 @@ public class App {
 
         EmpUtil.printName(emp);
         EmpUtil.printName(mgr);
+
+        Employee emp2;
+        Manager mgr2 = new Manager();
+        emp2 = mgr2;
+        mgr2 = emp2;
     }
 }
