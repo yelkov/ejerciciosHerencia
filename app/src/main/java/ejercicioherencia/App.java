@@ -18,6 +18,12 @@ public class App {
         Employee emp2;
         Manager mgr2 = new Manager();
         emp2 = mgr2;
-        mgr2 = emp2;
+        mgr2 = (Manager)emp2;
+
+        Employee emp3;
+        Manager mgr3 = new Manager();
+        ParTimeManager ptm = new ParTimeManager();
+        emp3 = mgr3;
+        ptm = (ParTimeManager)emp3;
     }
 }
