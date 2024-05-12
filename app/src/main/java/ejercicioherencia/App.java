@@ -6,16 +6,8 @@ package ejercicioherencia;
 public class App {
 
     public static void main(String[] args) {
-       LateBindingSuper lbSuper = new LateBindingSuper();
-       LateBindingSub lbSub = new LateBindingSub();
-
-       lbSuper.print();
-
-       lbSub.print();
-     ((LateBindingSuper)lbSub).print();
-
-     lbSuper = lbSub;
-
-     lbSuper.print();
+       A0Sub aoSub = new A0Sub();
+       aoSub.print();
+       aoSub.callOverridenPrint();
     }
 }
