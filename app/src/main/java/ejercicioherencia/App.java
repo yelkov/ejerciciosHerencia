@@ -6,12 +6,13 @@ package ejercicioherencia;
 public class App {
 
     public static void main(String[] args) {
+        Employee emp = new Employee();
+        emp.setName("Ken Wood");
+
         Manager mgr = new Manager();
+        mgr.setName("Ken Furr");
 
-        mgr.setName("Leslie Zanders");
-
-        String mgrName = mgr.getName();
-
-        System.out.println("Manager name: " + mgrName);
+        EmpUtil.printName(emp);
+        EmpUtil.printName(mgr);
     }
 }
